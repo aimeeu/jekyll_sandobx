@@ -30,9 +30,33 @@ twitter_username: jekyllrb
 github_username:  jekyll
 
 # Build settings
+markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
+
+keep_files: [images]
+assets:
+  sources:
+    - _assets/css
+    - _assets/build
+  compress:
+    css: true
+  autoprefixer:
+    browsers:
+      - "last 2 versions"
+      - "IE > 9"
+
+collections:
+  overview:
+    output: true
+    permalink: /overview/:title/
+  spinnaker_user_guides:
+    output: true
+    permalink: /spinnaker-user-guides/:title/
+  spinnaker_install_admin_guides:
+    output: true
+    permalink: /spinnaker-install-admin-guides/:title/
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -53,3 +77,16 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - .git
+  - .github
+  - .idea
+  - .assets-cache
+  - bin/
+  - Dockerfile
+  - Jenkinsfile
+  - README.md
+  - vendor/
+  - react/
